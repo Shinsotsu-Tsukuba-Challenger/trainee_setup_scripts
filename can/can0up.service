@@ -1,0 +1,12 @@
+[Unit]
+Description=can0up
+After=
+Requires=
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c 'sudo ip link set can0 up type can bitrate 250000'
+
+[Install]
+WantedBy=multi-user.target
