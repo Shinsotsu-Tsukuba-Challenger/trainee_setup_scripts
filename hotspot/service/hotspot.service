@@ -1,0 +1,13 @@
+[Unit]
+Description=hotspot
+After=
+Requires=
+
+[Service]
+Type=simple
+User=root
+Environment=HOTSPOT_SSID=HOTSPOT_SSID_NAME
+ExecStart=/bin/bash -c 'source /home/ubuntu/trainee/install/setup.bash && sudo bash $(ros2 pkg prefix --share trainee_setup_scripts)/hotspot/scripts/hotspot.sh ${HOTSPOT_SSID}'
+
+[Install]
+WantedBy=multi-user.target
